@@ -2,9 +2,9 @@ import { legacy_createStore } from "redux";
 import { combineReducers } from "redux";
 import { applyMiddleware } from "redux";
 import thunk from "redux-thunk"
-
+import {reducer as ProductReducer} from "./ProductReducer/reducer"
 const RootReducer = combineReducers({
-
+   ProductReducer : ProductReducer,
 })
 
 
