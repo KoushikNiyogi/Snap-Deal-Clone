@@ -1,0 +1,16 @@
+.carousel-image {
+    width: 10rem; /* Make sure the images fill the entire width */
+    height: auto; /* Keep the aspect ratio of the images */
+    object-fit: cover; /* Crop and center the images */
+  }
+  
+  .carousel-image.active {
+    /* Add any styles for the active image */
+    border: 2px solid blue;
+  }
+  .alice-carousel__prev-btn{
+    width: 100px
+  
+
+ 
+  }
