@@ -1,11 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import MainRoutes from './Pages/MainRoutes';
+import logo from "./logo.svg";
+import "./App.css";
+import MainRoutes from "./Pages/MainRoutes";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
     <div className="App">
-      <MainRoutes/>
+      <Navbar />
+      <MainRoutes />
+      <Footer />
     </div>
   );
 }
