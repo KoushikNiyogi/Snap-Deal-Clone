@@ -208,6 +208,7 @@ const DIV = styled.div`
   .cardsitems {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
     height: 100%;
     margin: 0 100px;
   }
