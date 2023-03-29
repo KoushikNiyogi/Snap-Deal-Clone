@@ -8,10 +8,10 @@ import{
 
 export const getProducts = (data)=>(dispatch)=>{
   dispatch({type: PRODUCT_GETREQUEST_PENDING})
-  axios.get(`https://calm-blue-cobra-wig.cyclic.app/products/${data}`)
+  axios.get(`https://calm-blue-cobra-wig.cyclic.app/products?type=${data}`)
   .then((res)=>{
     console.log(res);
-    return dispatch({type : PRODUCT_GETREQUEST_SUCCESS, payload : [res.data.items,res.data.items.length]})
+    return dispatch({type : PRODUCT_GETREQUEST_SUCCESS, payload : [res.data,res.data.length]})
 })
   .catch((err)=>dispatch({type : PRODUCT_GETREQUEST_FAILURE}))
 }

@@ -18,7 +18,7 @@ const MensPage = () => {
   },[])
   return (
     <Flex direction={"row"}>
-      <Filter/>
+      <Filter />
       <Box width={"80%"} border={"1px solid red"} >
         <Grid templateColumns={"repeat(4,1fr)"} gap={"10px"} padding={"10px"}>
           {
