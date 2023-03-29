@@ -17,15 +17,25 @@ import {
 } from "@chakra-ui/react";
 
 import { useToast } from "@chakra-ui/react";
+import { LoginSignUpContext } from "../../context/Login-SignUpContext";
 
 const SignUp = () => {
-  const [userName, setUserName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
+
   const toast = useToast();
 
   const [isLoading, setIsLoading] = useState(false);
+  const { isOpen, onClose } = useContext(LoginSignUpContext);
 
   const firstField = React.useRef(null);
+
+  const handleSignUp = () => {
+    
+  };
 
   return (
     <>
@@ -55,18 +65,18 @@ const SignUp = () => {
                 placeholder="Enter your first name"
                 autoComplete="off"
                 onChange={(e) => {
-                  setUserName(e.target.value);
+                  setFirstName(e.target.value);
                 }}
               />
               <FormLabel mt={4}>Last Name</FormLabel>
               <Input
-                value={password}
+                value={lastName}
                 ref={firstField}
                 id="lastName"
                 autoComplete="off"
                 placeholder="Enter your last name"
                 onChange={(e) => {
-                  setPassword(e.target.value);
+                  setLastName(e.target.value);
                 }}
               />
               <FormLabel mt={4}>Number</FormLabel>
@@ -77,7 +87,7 @@ const SignUp = () => {
                 autoComplete="off"
                 placeholder="Enter your Number"
                 onChange={(e) => {
-                  setPassword(e.target.value);
+                  setNumber(e.target.value);
                 }}
               />
               <FormLabel mt={4}>Email ID</FormLabel>
@@ -88,7 +98,7 @@ const SignUp = () => {
                 autoComplete="off"
                 placeholder="Enter your Email ID"
                 onChange={(e) => {
-                  setPassword(e.target.value);
+                  setEmail(e.target.value);
                 }}
               />
               <FormLabel mt={4}>Password</FormLabel>
@@ -108,7 +118,7 @@ const SignUp = () => {
           <ModalFooter>
             <Button
               isDisabled={isLoading}
-              onClick={handleLogin}
+              onClick={handleSignUp}
               colorScheme="red"
             >
               Register
@@ -120,4 +130,4 @@ const SignUp = () => {
   );
 };
 
-export default LoginModal;
+export default SignUp;
