@@ -11,13 +11,13 @@ import { ChakraProvider } from "@chakra-ui/react";
 function App() {
   return (
     <div className="App">
-       <ChakraProvider>
-      <LoginSignUpContextProvider>
-        <Navbar />
-        <MainRoutes />
-        <Login/>
-        <Footer />
-      </LoginSignUpContextProvider>
+      <ChakraProvider>
+        <LoginSignUpContextProvider>
+          <Navbar />
+          <MainRoutes />
+          <Login />
+          <Footer />
+        </LoginSignUpContextProvider>
       </ChakraProvider>
     </div>
   );
