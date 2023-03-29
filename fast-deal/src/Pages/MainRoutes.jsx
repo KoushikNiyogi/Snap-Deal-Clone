@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Cart from "../Components/Cart";
 import HomeandAppliance from "./HomeandAppliance";
 import HomePage from "./HomePage";
-import MensPage from "./MensPage";
+import MensPage from "./MensShoesPage";
 import WomensPage from "./WomensPage";
 const MainRoutes = () => {
   return (
