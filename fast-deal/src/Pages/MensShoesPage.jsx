@@ -14,19 +14,21 @@ const MensPage = () => {
   const dispatch = useDispatch();
   const {isLoading,isError,products,totalCount} = useSelector(state => state.ProductReducer);
   useEffect(()=>{
-    dispatch(getProducts("menshoes"))
+    dispatch(getProducts("womenshoes"))
   },[])
   return (
-    <Flex direction={"row"}>
+    <Box width={"100%"} backgroundColor={"#f7f7f7"}>
+    <Flex width={"80%"} backgroundColor={"#ffffff"} margin={"auto"} direction={"row"}>
       <Filter />
       <Box width={"80%"} border={"1px solid red"} >
         <Grid templateColumns={"repeat(4,1fr)"} gap={"10px"} padding={"10px"}>
           {
-            totalCount !=0 && products.map((item)=><GridItem> <ProductCard item = {item}/></GridItem>)
+            totalCount !=0 && products.map((item)=><GridItem key={item.id}> <ProductCard item = {item}/></GridItem>)
           }
         </Grid>
       </Box>
     </Flex>
+    </Box>
   )
 }
 

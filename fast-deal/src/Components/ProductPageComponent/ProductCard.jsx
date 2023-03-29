@@ -21,12 +21,13 @@ const ProductCard = ({ item }) => {
 
       />
       <Text fontSize='xl' color={"#666"}>{item.name}</Text>
-      <Flex>
+      <Flex alignItems="center">
         <Text textDecoration={"line-through"} fontSize='md' color={"#666"} mr={"10px"}>Rs. {item["strikeoff-price"]}</Text>
         <Text fontSize='lg' color={"black"} mr={"10px"}>Rs. {item.price}</Text>
         <Text fontSize='md' color={"#666"} border={"1px solid #666"} padding={"2px"}>{item.discount}% off</Text>
       </Flex>
-      <Stars rating = {item.rating.rate} count ={item.rating.count}/>
+      <Flex  alignItems="center" ><Stars rating = {item.rating.rate} count ={item.rating.count}/><span style={{marginLeft : "15px"}}>({item.rating.count} votes)</span></Flex>
+      <Text fontSize='md' color={"#666"}>Category : {item.brand}</Text>
     </Box>
     </Link>
   )

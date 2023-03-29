@@ -1,6 +1,6 @@
 import React from 'react'
 import {FaStarHalfAlt,FaStar,FaRegStar} from "react-icons/fa"
-
+import { Flex } from '@chakra-ui/react'
 const Stars = ({rating,count}) => {
  const ratingStar = Array.from({length : 5},(_,index)=>{
     let number = index + 0.5;
@@ -16,12 +16,11 @@ const Stars = ({rating,count}) => {
     
  })
   return (
-    <div style={{display:"flex",alignItems:"center"}}>
+    <Flex alignItems={"center"}>
         {
             ratingStar
         }
-        <p style={{marginLeft :  "15px"}}>({count})</p>
-    </div>
+    </Flex>
   )
 }
 
