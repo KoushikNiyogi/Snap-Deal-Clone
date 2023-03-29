@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <ChakraProvider>
         <LoginSignUpContextProvider>
-          <Navbar />
+          <NavBar />
           <MainRoutes />
           <Login />
           <Footer />
