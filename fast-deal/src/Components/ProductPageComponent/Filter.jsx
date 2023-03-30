@@ -78,19 +78,21 @@ const Filter = () => {
     filterState.productline.length != 0 &&(params["productline"] = filterState.productline)
     filterState.price.length != 0 && !filterState.price.includes(null) && (params["price_gte"] = filterState.price[0])
     filterState.price.length != 0 && !filterState.price.includes(null) &&(params["price_lte"] = filterState.price[1])
+    searchparams.get("_order")!=undefined && (params["_sort"] = searchparams.get("_sort"))
+    searchparams.get("_order")!=undefined && (params["_order"] = searchparams.get("_order"))
     setSearchParams(params);
   }, [filterState])
   /*{
     rating : `${searchparams.get("rating.rate_gte")}-${searchparams.get("rating.rate_lte")}`
     color : searchparams.getAll("color")
   }*/
-  console.log(filterState.rating.join("-"),filterState);
   return (
-    <Box w={"20%"} marginTop={"30px"}>
+    <Box w={"20%"} padding={"10px"}>
+      <h1>Product Filter</h1>
       <Accordion allowMultiple>
         {
           shoes.map((item) => {
-            return <AccordionItem>
+            return <AccordionItem key={Date.now()+Math.random()+item[0]}>
               {({ isExpanded }) => (
                 <>
                   <h2>
