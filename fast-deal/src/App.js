@@ -3,9 +3,7 @@ import "./App.css";
 import MainRoutes from "./Pages/MainRoutes";
 
 import Footer from "./Components/Footer/Footer";
-import { LoginSignUpContextProvider } from "./context/Login-SignUpContext";
-import LoginModal from "./Components/Signup-Login/SignUp";
-import Login from "./Components/Signup-Login/Login";
+
 import { ChakraProvider } from "@chakra-ui/react";
 import { NavBar } from "./Homepage/NavBar";
 
@@ -13,12 +11,9 @@ function App() {
   return (
     <div className="App">
       <ChakraProvider>
-        <LoginSignUpContextProvider>
-          <NavBar />
-          <MainRoutes />
-          <Login />
-          <Footer />
-        </LoginSignUpContextProvider>
+        <NavBar />
+        <MainRoutes />
+        <Footer />
       </ChakraProvider>
     </div>
   );
