@@ -127,6 +127,7 @@ const Filter = () => {
                               
                               return <Checkbox key={elm.value+elm.text} name={item[0]} value={elm.value} onChange={handleChange}>{item[0] === "color" ? <Flex alignItems={"center"}><Box mr={"10px"} height={"10px"} width={"10px"} backgroundColor={elm.value}></Box>{elm.text}</Flex> : <>{elm.text}</>}</Checkbox>
                             })
+                            
                           }
                         </Stack>
                       </CheckboxGroup>
