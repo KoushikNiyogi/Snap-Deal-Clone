@@ -25,9 +25,9 @@ const MainRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/product/:id" element={<SingleProductPage />} />
-      <Route path="/admin" element={<Admin />} />
+      {/* <Route path="/admin" element={<Admin />} />
       <Route path="/admindashboard" element={<AdminDashboard/>}/>
-      <Route path="/adminedit/:id" element={AdminEditProduct}/>
+      <Route path="/edit/:id" element={<AdminEditProduct/>}/> */}
       <Route
         path="*"
         element={
