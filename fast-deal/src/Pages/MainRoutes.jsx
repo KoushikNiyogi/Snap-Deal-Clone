@@ -8,6 +8,10 @@ import MensShoePage from "./MensShoesPage";
 import WomensPage from "./WomensPage";
 import SingleProductPage from "./SigleProductpage";
 import Admin from "./Admin";
+import AdminDashboard from "./AdminDashboard";
+import AdminEditProduct from "./AdminEditProduct";
+
+
 const MainRoutes = () => {
   return (
     <Routes>
@@ -16,9 +20,10 @@ const MainRoutes = () => {
       <Route path="/product/women-footware" element={<WomensPage />} />
       <Route path="/product/homeandappliances" element={<HomeandAppliance />} />
       <Route path="/cart" element={<Cart />} />
-
       <Route path="/product/:id" element={<SingleProductPage />} />
       <Route patth="/admin" elemnet={<Admin />} />
+      <Route path="/admindashboard" element={<AdminDashboard/>}/>
+      <Route path="/adminedit/:id" element={AdminEditProduct}/>
       <Route
         path="*"
         element={
