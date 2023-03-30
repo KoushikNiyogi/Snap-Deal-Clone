@@ -30,6 +30,8 @@ const MensPage = () => {
     searchparams.getAll("productline").length!=0&&(params["productline"] = searchparams.getAll("productline"))
     searchparams.get("_order")!=undefined && (params["_sort"] = searchparams.get("_sort"))
     searchparams.get("_order")!=undefined && (params["_order"] = searchparams.get("_order"))
+    searchparams.getAll("size").length!=0&&(params["size"] = searchparams.getAll("size"))
+    searchparams.getAll("category").length!=0&&(params["category"] = searchparams.getAll("category"))
     return params;
 
   }
