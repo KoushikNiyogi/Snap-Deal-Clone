@@ -27,7 +27,7 @@ const ProductCard = ({ item }) => {
         <Text fontSize='md' color={"#666"} border={"1px solid #666"} padding={"2px"}>{item.discount}% off</Text>
       </Flex>
       <Flex  alignItems="center" ><Stars rating = {item.rating.rate} count ={item.rating.count}/><span style={{marginLeft : "15px"}}>({item.rating.count} votes)</span></Flex>
-      <Text fontSize='md' color={"#666"}>Category : {item.brand}</Text>
+      <Text fontSize='md' color={"#666"}>Category : {item.brand || item.category}</Text>
     </Box>
     </Link>
   )
