@@ -1,13 +1,25 @@
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "./actionTypes";
 
-const initialStateLogin = {
-  isLoading: false,
-  isLogin: false,
-  isError: false,
-  user: [],
-};
+function getInitialState() {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user) {
+    return {
+      isLoading: false,
+      isLogin: false,
+      isError: false,
+      user: user,
+    };
+  } else {
+    return {
+      isLoading: false,
+      isLogin: false,
+      isError: false,
+      user: null,
+    };
+  }
+}
 
-export const reducer = (state = initialStateLogin, { type, payload }) => {
+export const reducer = (state = getInitialState(), { type, payload }) => {
   switch (type) {
     case LOGIN_REQUEST:
       return { ...state, isLoading: true };

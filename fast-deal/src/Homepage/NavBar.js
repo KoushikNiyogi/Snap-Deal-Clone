@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../Styles/HomeStyles/NavBar.css";
-
 import Fastdeal from "../assets/Red_Modern_Label_Logo-removebg-preview.png";
 import searchIcon from "../assets/Home/searchIcon.png";
 import shoppingCartIcon from "../assets/Home/cart.png";
@@ -11,9 +10,8 @@ import { Backdrop } from "./Backdrop";
 import { HomeSidebar } from "./HomeSidebar";
 import { SideSignin } from "./SideSignin";
 import { useDisclosure } from "@chakra-ui/react";
-// import Cart from "../components/Cart";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const NavBar = ({ showHamburger }) => {
   const [show, setShow] = useState(false);
@@ -28,17 +26,10 @@ export const NavBar = ({ showHamburger }) => {
     setShow(!show);
   };
 
-  const [user, setUser] = useState({});
+  const user = useSelector((store) => {
+    return store.loginReducer.user;
+  });
 
-  useEffect(() => {
-    axios
-      .get("https://snapdealbackend.onrender.com/users", {
-        headers: { token: localStorage.getItem("token") },
-      })
-      .then((r) => setUser(r.data));
-  }, []);
-
-  console.log(typeof user);
   return (
     <div className="top-bar">
       <div className="top-bar__container">
@@ -119,7 +110,7 @@ export const NavBar = ({ showHamburger }) => {
             </div>
             <div className="top-bar__sign-in-wrapper">
               <div className="top-bar__sign-in">
-                <p>{typeof user == "string" ? "Sign in" : user?.name}</p>
+                <p>{typeof user == "string" ? "Sign in" : user?.firstName}</p>
                 <img
                   src={userIcon}
                   alt="profile user"

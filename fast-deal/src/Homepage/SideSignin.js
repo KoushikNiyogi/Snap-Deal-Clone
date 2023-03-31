@@ -4,12 +4,16 @@ import { RegisterButton } from "./RegisterButton";
 import { LoginButton } from "./LoginButton";
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const SideSignin = ({ setNum }) => {
-  const token = localStorage.getItem("token");
+  const user = useSelector((store) => {
+    console.log(store);
+    return store.loginReducer.user;
+  });
   const [random, setrandom] = useState(0);
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     setrandom(random + 1);
     window.location.href = "/";
   };
@@ -34,7 +38,7 @@ export const SideSignin = ({ setNum }) => {
           <p>Shortlist</p>
         </li>
       </ul>
-      {token ? (
+      {user ? (
         <Button onClick={handleLogout}>Logout</Button>
       ) : (
         <>

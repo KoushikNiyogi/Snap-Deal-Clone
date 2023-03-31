@@ -8,15 +8,13 @@ export const Login = ({ onClose, setrandom }) => {
   const [password, setPassword] = useState("");
   const toast = useToast();
   const dispatch = useDispatch();
-
   const handleLogin = () => {
     const userData = {
       email,
       password,
     };
     console.log(userData);
-    dispatch(login(userData, onClose, setrandom,toast,setEmail,setPassword));
-   
+    dispatch(login(userData, onClose, setrandom, toast, setEmail, setPassword));
   };
   return (
     <>
