@@ -3,7 +3,8 @@ import{
     PRODUCT_GETREQUEST_FAILURE,
     PRODUCT_GETREQUEST_PENDING,
     PRODUCT_GETREQUEST_SUCCESS,
-    UPDATE_PATH
+    UPDATE_PATH,
+    TOTAL_ITEMS
 } from "./actionTypes"
 const initialstate = {
     isLoading : false,
@@ -15,6 +16,10 @@ const initialstate = {
 export const reducer = (state = initialstate,{type,payload})=>{
     //console.log(type,payload)
   switch(type){
+    case TOTAL_ITEMS : return{
+        ...state,
+        totalCount : payload
+    }
     case UPDATE_PATH : return{
         ...state,
         path : payload,
@@ -26,8 +31,7 @@ export const reducer = (state = initialstate,{type,payload})=>{
     case PRODUCT_GETREQUEST_SUCCESS : return {
         ...state,
         isLoading : false,
-        products : payload[0],
-        totalCount : payload[1]
+        products : payload
     }
     case PRODUCT_GETREQUEST_FAILURE : return {
         ...state,
