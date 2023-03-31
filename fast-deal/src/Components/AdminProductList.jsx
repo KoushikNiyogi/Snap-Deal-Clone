@@ -39,10 +39,9 @@ export const AdminProductList = () => {
   
 }
 const DIV = styled.div`
-width: 100%;
-    /* margin-top: 40px auto; */
-    /* margin-left: 30px; */
+width: 70%;
+margin-left: 7px;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    gap: 20px;
+    gap: 15px;
 `

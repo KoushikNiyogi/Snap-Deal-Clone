@@ -18,11 +18,11 @@ const initialState = {
 const AdminEditProduct = () => {
   const {id} = useParams();
   
-  const [data, setData] = useState("");
+  const [data, setData] = useState(initialState);
   const [success, setSuccess] = useState(false);
 
 
-  const product = useSelector((store) => store.productReducer.products);
+  const {products} = useSelector((store) => store.AdminProductReducer);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -31,36 +31,38 @@ const AdminEditProduct = () => {
     // console.log(name,value);
     if(name === "image"||name === "image1" || name === "image2"){
         name = "image";
-        value = [...product.image,value];
+        value = [...products.image,value];
        }
+    // value = [...products.image,value];
     setData(prev => {
       return {...prev, [name]: value}
     })
-    console.log(data);
+    
   }
   
   const handleEdit = (e) => {
     e.preventDefault();
-    dispatch(editProduct(data, id)).then(() => {
+    dispatch(editProduct(data, id))
+    .then(() => {
       setSuccess(true);
     })
   }
 
   useEffect(() => {
-    const parsedId = typeof id === "string" ? parseInt(id) : id;
-    const data = product.find((el) => el.id === parsedId);
+    const parsedId = typeof id === "string" ? parseInt(id) : +id;
+    const data = products.find((el) => el.id === parsedId);
     setData(data);
     console.log("sjdfjasd");
-  }, [id,product]);
+  }, [id,products]);
+  console.log(data,"data");
   
-  
-console.log(product,"loe54")
+console.log(products,"products")
   return (
     <DIV>
       <h3>Edit Product: {id}</h3>
-      <h2>{success && "Product Edited Successfully!!"}</h2>
+      <h2>{success && "Product Edited Successfully!!"} </h2>
       <form onSubmit={handleEdit}>
-        <input type="text" name={"image"} onChange={handleChange} value={data.image}/>
+        <input type="text" name={"image"} onChange={handleChange} value={data.image[0]}/>
         <input type="text" name={"name"} onChange={handleChange} value={data.name}/>
         <input type="number" name={"price"} onChange={handleChange} value={data.price}/>
         <input type="text" name={"productline"} onChange={handleChange} value={data.productline}/>
@@ -71,9 +73,9 @@ console.log(product,"loe54")
           <option value="Womens">Women</option>
           {/* <option value="children">Kids</option> */}
         </select>
-        <div>
+        
         <button type='submit'>Edit</button>
-        </div>
+        
       </form>
     </DIV>
   )
@@ -94,10 +96,12 @@ padding: 20px;
         width: 80%;
         height: 40px;
         font-size: large;
+        border: 1px solid gray;
     }
     button{
-        width: 20%;
+        width: 40%;
         height: 35px;
+        border: 1px solid black;
     }
     form{
       display: flex;
