@@ -7,7 +7,7 @@ const addToCartAction = (payload) => {
 
 export const addToCart = (id) => (dispatch) => {
   // Complete add to cart store functionality
-  axios
+  return axios
     .get(`https://calm-blue-cobra-wig.cyclic.app/products/${id}`)
     .then((res) => {
       dispatch(addToCartAction(res.data));
