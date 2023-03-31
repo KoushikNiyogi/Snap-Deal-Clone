@@ -21,9 +21,9 @@ const MainRoutes = () => {
       <Route path="/product/homeandappliances" element={<HomeandAppliance />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/product/:id" element={<SingleProductPage />} />
-      <Route patth="/admin" elemnet={<Admin />} />
+       <Route path="/admin" element={<Admin />} />
       <Route path="/admindashboard" element={<AdminDashboard/>}/>
-      <Route path="/adminedit/:id" element={AdminEditProduct}/>
+      <Route path="/edit/:id" element={<AdminEditProduct/>}/> 
       <Route
         path="*"
         element={
