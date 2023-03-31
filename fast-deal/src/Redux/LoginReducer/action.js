@@ -1,8 +1,9 @@
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "./actionTypes";
 
 export const login =
-  (userData, onClose, setrandom, toast, setEmail, setPassword) =>
+  (userData, onClose, setrandom, toast, setEmail, setPassword, navigate) =>
   (dispatch) => {
     // console.log(userData);
     dispatch({ type: LOGIN_REQUEST });
@@ -39,7 +40,9 @@ export const login =
               });
               return;
             }
-
+            if (user.email === "admin@gmail.com") {
+              navigate("/admin", { replace: true });
+            }
             localStorage.setItem("user", JSON.stringify(user));
             dispatch({ type: LOGIN_SUCCESS, payload: user });
 
@@ -47,7 +50,7 @@ export const login =
             setPassword("");
             toast({
               title: "Login",
-              description: "Login Successfull",
+              description: "Login Successful",
               status: "success",
               duration: 9000,
               isClosable: true,
