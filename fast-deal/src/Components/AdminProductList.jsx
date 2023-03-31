@@ -14,7 +14,7 @@ export const AdminProductList = () => {
 
     let obj = {
         params: {
-            gender: searchParams.getAll("category"),
+            brand: searchParams.getAll("category"),
             _sort: searchParams.get("order") && "price",
             _order: searchParams.get("order"),
         },
@@ -39,8 +39,8 @@ export const AdminProductList = () => {
   
 }
 const DIV = styled.div`
-width: 70%;
-margin-left: 7px;
+width: 80%;
+margin-left: 47px;
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 15px;
