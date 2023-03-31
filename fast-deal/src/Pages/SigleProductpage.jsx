@@ -73,8 +73,7 @@ import my_pixel from "../scripts/my_pixel";
 import Gap from "../Components/Gap/Gap";
 import my_border from "../scripts/my_border";
 import { BsCashStack } from "react-icons/bs";
-
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Redux/CartReducer/action";
 
 const SingleProductPage = () => {
@@ -82,11 +81,25 @@ const SingleProductPage = () => {
   const [error, setError] = useState(false);
   let { id } = useParams();
   let [productData, setProductData] = useState({});
-
+  const store = useSelector(state => state.cartReducer)
+  const toast = useToast()
   // Adding prod to cart here
   const dispatch = useDispatch();
   const addToCartHandler = (id) => {
-    dispatch(addToCart(id));
+
+    if(store.cart.find((item)=> item.id == id)){
+      toast({
+        title: `Product is already in Cart`,
+        status: "error",
+        isClosable: true,
+      });
+    }else{
+    dispatch(addToCart(id)).then((res)=>toast({
+      title: `Product Added to Cart`,
+      status: "success",
+      isClosable: true,
+    }));
+    }
   };
   //------------
   useEffect(() => {
@@ -104,7 +117,7 @@ const SingleProductPage = () => {
         setError(true);
       });
   }, [id]);
-
+  console.log(store.cart);
   if (loading) return <Loader gif={LOADER_URL} />;
   if (error) return <Loader gif={ERROR_URL} />;
   return productData === "undefined" ? null : (
