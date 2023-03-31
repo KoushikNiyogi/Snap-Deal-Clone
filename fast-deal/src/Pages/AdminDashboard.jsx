@@ -15,10 +15,10 @@ import { AdminProductList } from '../Components/AdminProductList'
 }
 export default AdminDashboard
 const DIV = styled.div`
-  /* display: flex; */
+  width: 100%;
   margin: auto;
   .productlist{
     border: 1px solid red;
-    width: 95%;
+    
   }
 `
