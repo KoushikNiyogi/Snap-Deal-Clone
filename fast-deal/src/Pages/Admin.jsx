@@ -30,7 +30,8 @@ const initialState = {
     // console.log(name,value);
     if(name === "image"||name === "image1" || name === "image2"){
         name = "image";
-        value = [...product.image,value];
+         value = [...product.image,value];
+        // value = [...product,value]
        }
     //    if(name==="rating.rate"||name==="rating.count"){
     //     name = "rating.rate"
@@ -103,6 +104,11 @@ width: 400px;
 margin:40px  auto;
 border: 1px solid gray;
 padding: 20px;
+font-family: 'Courier New', Courier, monospace;
+font-weight: 700;
+h2{
+  color: #FF1744;
+}
 input{
   border: 1px solid gray;
 }
@@ -120,6 +126,12 @@ input{
     button{
         width: 20%;
         height: 35px;
+        color: white;
+        background-color: tomato;
+        border-radius: 5px;
+        :hover{
+          color: #81D4FA;
+        }
     }
     form{
       display: flex;
