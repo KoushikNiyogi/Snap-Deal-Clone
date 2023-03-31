@@ -94,13 +94,11 @@ const SingleProductPage = () => {
     axios
       .get(`https://calm-blue-cobra-wig.cyclic.app/products/${id}`)
       .then((res) => {
-        console.log(res);
         setProductData(res.data);
         setLoading(false);
         setError(false);
       })
       .catch((err) => {
-        console.error(err);
         setError(true);
       });
   }, [id]);
