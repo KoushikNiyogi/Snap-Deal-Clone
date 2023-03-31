@@ -1,9 +1,18 @@
+import { Link } from "react-router-dom";
 import React from "react";
 
 import styled from "styled-components";
+import { updatePath } from "../Redux/ProductReducer/action";
+import { useDispatch } from "react-redux";
 // import "../Styles/HomeStyles/SideProductList.css";
 
 export const SideProductList = () => {
+  const dispatch = useDispatch();
+  const handleClick = (data)=>{
+    console.log(data);
+    localStorage.setItem("path",JSON.stringify(data));
+    dispatch(updatePath(data));
+  }
   return (
     <DIV>
       <div className="leftside">
@@ -364,17 +373,17 @@ export const SideProductList = () => {
             <p>MORE CATEGORIES</p>
           </li>
           <div className="moreli">
-            <li>
-              <span>Men's Fashion</span>
+            <li onClick={()=>handleClick("menshoes")}>
+              <Link to={"/product/mens-footware" } state = {{data : "menshoes"}}>Men's Footware</Link>
             </li>
-            <li>
-              <span>Women's Fashion</span>
+            <li onClick={()=>handleClick("womenshoes")}>
+              <Link to={"/product/mens-footware"}>Women's Footware</Link>
             </li>
-            <li>
-              <span>Toys,kids Fashion &amp; More</span>
+            <li onClick={()=>handleClick("menclothing")}>
+             <Link to={"/product/mens-footware"}>Men's Clothing</Link>
             </li>
-            <li>
-              <span>Beauty,Health &amp; Daily Needs</span>
+            <li onClick={()=>handleClick("womenclothing")}>
+             <Link to={"/product/mens-footware"}>Women's Clothing</Link>
             </li>
             <li>
               <span>Sports,Fitness &amp; Outdoor</span>
