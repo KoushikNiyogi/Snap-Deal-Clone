@@ -74,12 +74,21 @@ import Gap from "../Components/Gap/Gap";
 import my_border from "../scripts/my_border";
 import { BsCashStack } from "react-icons/bs";
 
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/CartReducer/action";
+
 const SingleProductPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   let { id } = useParams();
   let [productData, setProductData] = useState({});
 
+  // Adding prod to cart here
+  const dispatch = useDispatch();
+  const addToCartHandler = (id) => {
+    dispatch(addToCart(id));
+  };
+  //------------
   useEffect(() => {
     setLoading(true);
     axios
@@ -243,8 +252,9 @@ const SingleProductPage = () => {
                   variant={"outline"}
                   colorScheme={"pink"}
                   size="md"
+                  onClick={() => addToCartHandler(id)}
                 >
-                  " ADD TO BAG"
+                  ADD TO BAG
                 </Button>
               </HStack>
             </Box>
@@ -375,14 +385,3 @@ const SingleProductPage = () => {
 };
 
 export default SingleProductPage;
-
-{
-  /* */
-}
-
-//------------------------------------
-{
-  /* */
-}
-
-//--------------------------------------
