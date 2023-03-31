@@ -1,11 +1,11 @@
-import { useToast } from "@chakra-ui/react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "./actionTypes";
 
 export const login =
-  (userData, onClose, setrandom, toast, setEmail, setPassword) =>
+  (userData, onClose, setrandom, toast, setEmail, setPassword, navigate) =>
   (dispatch) => {
-    console.log(userData);
+    // console.log(userData);
     dispatch({ type: LOGIN_REQUEST });
 
     if (userData.email === "" || userData.password === "") {
@@ -33,25 +33,29 @@ export const login =
 
             if (!user) {
               toast({
-                title: "Login Invalid",
+                title: "Invalid Account",
                 status: "error",
                 duration: 9000,
                 isClosable: true,
               });
               return;
             }
+            if (user.email === "admin@gmail.com") {
+              navigate("/admin", { replace: true });
+            }
+            localStorage.setItem("user", JSON.stringify(user));
+            dispatch({ type: LOGIN_SUCCESS, payload: user });
 
-            dispatch({ type: LOGIN_SUCCESS, payload: response });
             setEmail("");
             setPassword("");
             toast({
               title: "Login",
-              description: "Login Successfull",
+              description: "Login Successful",
               status: "success",
               duration: 9000,
               isClosable: true,
             });
-            localStorage.setItem("email", response.data);
+
             setrandom(1);
             onClose();
           }

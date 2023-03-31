@@ -8,8 +8,8 @@ import { SignUp } from "../Redux/SignUpReducer/action";
 
 export const Register = ({ onClose }) => {
   const register = useSelector((store)=>store.signUpReducer)
-  console.log("rgei")
-  console.log(register)
+  // console.log("rgei")
+  // console.log(register)
   const [firstName, setFirstName] = useState("");
   const [lasttName, setLastName] = useState("");
   const [number, setNumber] = useState("");
