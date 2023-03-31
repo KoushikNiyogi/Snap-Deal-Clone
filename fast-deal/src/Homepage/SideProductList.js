@@ -377,13 +377,13 @@ export const SideProductList = () => {
               <Link to={"/product/mens-footware" } state = {{data : "menshoes"}}>Men's Footware</Link>
             </li>
             <li onClick={()=>handleClick("womenshoes")}>
-              <Link to={"/product/mens-footware"} state = {{data : "womenshoes"}}>Women's Footware</Link>
+              <Link to={"/product/mens-footware"}>Women's Footware</Link>
             </li>
-            <li>
-              <span>Toys,kids Fashion &amp; More</span>
+            <li onClick={()=>handleClick("menclothing")}>
+             <Link to={"/product/mens-footware"}>Men's Clothing</Link>
             </li>
-            <li>
-              <span>Beauty,Health &amp; Daily Needs</span>
+            <li onClick={()=>handleClick("womenclothing")}>
+             <Link to={"/product/mens-footware"}>Women's Clothing</Link>
             </li>
             <li>
               <span>Sports,Fitness &amp; Outdoor</span>

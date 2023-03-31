@@ -98,12 +98,14 @@ export const NavBar = ({ showHamburger }) => {
           <div className="top-bar__cart-sign">
             <div className="top-bar__cart">
               <div onClick={handleOpen} style={{ display: "flex" }}>
-                <p>Cart</p>
-                <img
-                  src={shoppingCartIcon}
-                  alt="shopping cart"
-                  style={{ height: "20px", margin: "3px 0px 0px 6px" }}
-                />
+                <Link to={"/cart"}>
+                  <p>Cart</p>
+                  <img
+                    src={shoppingCartIcon}
+                    alt="shopping cart"
+                    style={{ height: "20px", margin: "3px 0px 0px 6px" }}
+                  />
+                </Link>
               </div>
 
               {/* <Cart isOpen={isOpen} onClose={onClose} /> */}
