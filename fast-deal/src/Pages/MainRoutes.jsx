@@ -11,6 +11,7 @@ import Admin from "./Admin";
 import AdminDashboard from "./AdminDashboard";
 import AdminEditProduct from "./AdminEditProduct";
 import AddCart from "../Components/AddCart";
+import Address from "../Components/Address";
 
 
 const MainRoutes = () => {
@@ -22,7 +23,7 @@ const MainRoutes = () => {
       <Route path="/product/homeandappliances" element={<HomeandAppliance />} />
       <Route path="/cart" element={<AddCart />} />
       <Route path="/product/:id" element={<SingleProductPage />} />
-       <Route path="/admin" element={<Admin />} />
+      <Route path="/admin" element={<Admin />} />
       <Route path="/admindashboard" element={<AdminDashboard/>}/>
       <Route path="/edit/:id" element={<AdminEditProduct/>}/> 
       <Route

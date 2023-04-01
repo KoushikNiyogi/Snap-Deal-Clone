@@ -7,7 +7,7 @@ import { Skeleton, Stack } from '@chakra-ui/react'
 const ProductCard = ({ item }) => {
   return (
     <Link to={`/product/${item.id}`}>
-    <Box padding={"10px"} textAlign={"start"} _hover={{
+    <Box padding={"10px"} maxW='sm' textAlign={"start"} _hover={{
       boxShadow: "0 5px 17px 0 rgba(23,84,116,0.18)",
       zIndex: "15"
     }}>
