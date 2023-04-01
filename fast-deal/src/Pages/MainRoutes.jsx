@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Cart from "./Cart";
+import Cart from "../Components/AddCart";
 import HomeandAppliance from "./HomeandAppliance";
 import HomePage from "./HomePage";
 import MensShoePage from "./MensShoesPage";
@@ -11,6 +11,8 @@ import Admin from "./Admin";
 import AdminDashboard from "./AdminDashboard";
 import AdminEditProduct from "./AdminEditProduct";
 import { PrivateRoute } from "../Components/PrivateRoute";
+import AddCart from "../Components/AddCart";
+
 
 const MainRoutes = () => {
   return (
@@ -27,6 +29,7 @@ const MainRoutes = () => {
           </PrivateRoute>
         }
       />
+      <Route path="/cart" element={<AddCart />} />
       <Route path="/product/:id" element={<SingleProductPage />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/admindashboard" element={<AdminDashboard />} />

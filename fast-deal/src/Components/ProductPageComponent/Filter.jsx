@@ -134,6 +134,9 @@ const Filter = () => {
     filterState.category!=undefined && filterState.category.length !=0 && (params["category"] = filterState.category)
     searchparams.get("_order")!=undefined && (params["_sort"] = searchparams.get("_sort"))
     searchparams.get("_order")!=undefined && (params["_order"] = searchparams.get("_order"))
+    searchparams.get("_page")!=undefined&&(params["_page"] = searchparams.get("_page"))
+    searchparams.get("_page")!=undefined&&(params["_limit"] = searchparams.get("_limit"))
+    console.log(params);
     setSearchParams(params);
   }, [filterState])
   /*{

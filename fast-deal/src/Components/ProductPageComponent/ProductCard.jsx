@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import { Box, Flex, Image, Text } from "@chakra-ui/react"
 import { SlHeart } from "react-icons/sl"
 import Stars from './Stars';
+import { Skeleton, Stack } from '@chakra-ui/react'
 const ProductCard = ({ item }) => {
   return (
     <Link to={`/product/${item.id}`}>

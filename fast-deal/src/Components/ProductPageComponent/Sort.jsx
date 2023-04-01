@@ -17,6 +17,10 @@ const Sort = () => {
       searchparams.get("price_lte")!=null &&( params["price_lte"] =  searchparams.get("price_lte"))
       searchparams.getAll("color").length!=0&&(params["color"] = searchparams.getAll("color"))
       searchparams.getAll("productline").length!=0&&(params["productline"] = searchparams.getAll("productline"))
+      searchparams.get("_page")!=undefined&&(params["_page"] = searchparams.get("_page"))
+      searchparams.get("_page")!=undefined&&(params["_limit"] = searchparams.get("_limit"))
+      searchparams.getAll("size").length!=0&&(params["size"] = searchparams.getAll("size"))
+      searchparams.getAll("category").length!=0&&(params["category"] = searchparams.getAll("category"))
       console.log(params);
       setSearchParams(params);
     }
