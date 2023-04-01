@@ -10,17 +10,14 @@ import { Backdrop } from "./Backdrop";
 import { HomeSidebar } from "./HomeSidebar";
 import { SideSignin } from "./SideSignin";
 import { useDisclosure } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export const NavBar = ({ showHamburger }) => {
   const [show, setShow] = useState(false);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const handleOpen = () => {
-    onOpen();
-  };
+  const navigate = useNavigate();
 
   const togglesearch = () => {
     setShow(!show);
@@ -29,6 +26,15 @@ export const NavBar = ({ showHamburger }) => {
   const user = useSelector((store) => {
     return store.loginReducer.user;
   });
+ 
+
+  const handleOpen = () => {
+    if (!!!user) {
+      onOpen();
+    } else {
+      navigate("/cart")
+    }
+  };
 
   return (
     <div className="top-bar">
@@ -98,21 +104,21 @@ export const NavBar = ({ showHamburger }) => {
           <div className="top-bar__cart-sign">
             <div className="top-bar__cart">
               <div onClick={handleOpen} style={{ display: "flex" }}>
-                <Link to={"/cart"}>
+                <div>
                   <p>Cart</p>
                   <img
                     src={shoppingCartIcon}
                     alt="shopping cart"
                     style={{ height: "20px", margin: "3px 0px 0px 6px" }}
                   />
-                </Link>
+                </div>
               </div>
 
               {/* <Cart isOpen={isOpen} onClose={onClose} /> */}
             </div>
             <div className="top-bar__sign-in-wrapper">
               <div className="top-bar__sign-in">
-                <p>{typeof user == "string" ? "Sign in" : user?.firstName}</p>
+                <p>{!!user == false ? "Sign in" : user?.firstName}</p>
                 <img
                   src={userIcon}
                   alt="profile user"
@@ -120,7 +126,7 @@ export const NavBar = ({ showHamburger }) => {
                 />
               </div>
               <div className="sign-in-hover">
-                <SideSignin />
+                <SideSignin isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
               </div>
             </div>
           </div>

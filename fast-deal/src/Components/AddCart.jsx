@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Box, Heading, Text, Button, HStack } from '@chakra-ui/react'
 import CartItem from './CartItem'
-import { getCartItem } from '../Redux/CartReducer/action'
 import { Link } from 'react-router-dom'
 import Loader from './Loader/Loader'
+import { getCartItem } from '../Redux/CartReducer/action'
 
 
 const AddCart = () => {

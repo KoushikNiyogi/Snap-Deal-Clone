@@ -85,9 +85,9 @@ const SingleProductPage = () => {
   const toast = useToast()
   // Adding prod to cart here
   const dispatch = useDispatch();
-  const addToCartHandler = (id) => {
+  const addToCartHandler = (productData) => {
     console.log(store);
-    if(store.cart.find((item)=> item.id == id)){
+    if(store.cart.find((item)=> item.id == productData.id)){
       toast({
         title: `Product is already in Cart`,
         status: "error",
