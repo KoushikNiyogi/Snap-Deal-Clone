@@ -8,11 +8,11 @@ import { useDispatch } from "react-redux";
 
 export const SideProductList = () => {
   const dispatch = useDispatch();
-  const handleClick = (data)=>{
+  const handleClick = (data) => {
     console.log(data);
-    localStorage.setItem("path",JSON.stringify(data));
+    localStorage.setItem("path", JSON.stringify(data));
     dispatch(updatePath(data));
-  }
+  };
   return (
     <DIV>
       <div className="leftside">
@@ -373,17 +373,19 @@ export const SideProductList = () => {
             <p>MORE CATEGORIES</p>
           </li>
           <div className="moreli">
-            <li onClick={()=>handleClick("menshoes")}>
-              <Link to={"/product/mens-footware" } state = {{data : "menshoes"}}>Men's Footware</Link>
+            <li onClick={() => handleClick("menshoes")}>
+              <Link to={"/product/mens-footware"} state={{ data: "menshoes" }}>
+                Men's Footware
+              </Link>
             </li>
-            <li onClick={()=>handleClick("womenshoes")}>
+            <li onClick={() => handleClick("womenshoes")}>
               <Link to={"/product/mens-footware"}>Women's Footware</Link>
             </li>
-            <li onClick={()=>handleClick("menclothing")}>
-             <Link to={"/product/mens-footware"}>Men's Clothing</Link>
+            <li onClick={() => handleClick("menclothing")}>
+              <Link to={"/product/mens-footware"}>Men's Clothing</Link>
             </li>
-            <li onClick={()=>handleClick("womenclothing")}>
-             <Link to={"/product/mens-footware"}>Women's Clothing</Link>
+            <li onClick={() => handleClick("womenclothing")}>
+              <Link to={"/product/mens-footware"}>Women's Clothing</Link>
             </li>
             <li>
               <span>Sports,Fitness &amp; Outdoor</span>
@@ -452,11 +454,13 @@ const DIV = styled.div`
 
   .container {
     margin-top: 20px;
-    width: 100%;
+    width: 15rem;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-areas: "l l r r r r r r r r";
+    /* color: black; */
   }
+
   .leftside {
     grid-area: l;
     background-color: white;
@@ -588,6 +592,7 @@ const DIV = styled.div`
     color: #666666;
     font-weight: bold;
     margin-bottom: -6px;
+    text-decoration: none;
   }
   .moreli li a {
     color: #25a8ed;
