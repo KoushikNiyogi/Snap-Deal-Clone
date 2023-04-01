@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Cart from "./Cart";
+import Cart from "../Components/AddCart";
 import HomeandAppliance from "./HomeandAppliance";
 import HomePage from "./HomePage";
 import MensShoePage from "./MensShoesPage";
@@ -10,6 +10,7 @@ import SingleProductPage from "./SigleProductpage";
 import Admin from "./Admin";
 import AdminDashboard from "./AdminDashboard";
 import AdminEditProduct from "./AdminEditProduct";
+import AddCart from "../Components/AddCart";
 
 
 const MainRoutes = () => {
@@ -19,7 +20,7 @@ const MainRoutes = () => {
       <Route path="/product/mens-footware" element={<MensShoePage />} />
       <Route path="/product/women-footware" element={<WomensPage />} />
       <Route path="/product/homeandappliances" element={<HomeandAppliance />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route path="/cart" element={<AddCart />} />
       <Route path="/product/:id" element={<SingleProductPage />} />
        <Route path="/admin" element={<Admin />} />
       <Route path="/admindashboard" element={<AdminDashboard/>}/>
