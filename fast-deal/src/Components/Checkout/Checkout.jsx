@@ -22,15 +22,13 @@ import {
 import styles from "./Checkout.module.css";
 
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "../Navbar";
-import Footer from "../Footer";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const [value, setValue] = React.useState("Cash on delivery");
   const {cart, isLoading} = useSelector((store)=>{return {
-    cart: store.CartReducer.cart,   
-    isLoading :  store.CartReducer.isLoading
+    cart: store.cartReducer.cart,   
+    isLoading :  store.cartReducer.isLoading
     }})
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -94,7 +92,6 @@ const Checkout = () => {
 
   return (
     <Box className={styles.body}>
-      <Navbar/>
       <Box p={"3rem"}>
         <Text textAlign={"start"}>Home » Checkout</Text>
       </Box>
@@ -435,7 +432,6 @@ const Checkout = () => {
           </Box>
         </Grid>
       </Box>
-      <Footer/>
     </Box>
   );
 };

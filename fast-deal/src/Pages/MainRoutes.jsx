@@ -11,6 +11,7 @@ import Admin from "./Admin";
 import AdminDashboard from "./AdminDashboard";
 import AdminEditProduct from "./AdminEditProduct";
 import AddCart from "../Components/AddCart";
+import Checkout from "../Components/Checkout/Checkout";
 
 
 const MainRoutes = () => {
@@ -23,6 +24,7 @@ const MainRoutes = () => {
       <Route path="/cart" element={<AddCart />} />
       <Route path="/product/:id" element={<SingleProductPage />} />
        <Route path="/admin" element={<Admin />} />
+       <Route path='/checkout' element={<Checkout/>}/>
       <Route path="/admindashboard" element={<AdminDashboard/>}/>
       <Route path="/edit/:id" element={<AdminEditProduct/>}/> 
       <Route
