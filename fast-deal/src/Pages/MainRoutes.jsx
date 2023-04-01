@@ -10,7 +10,7 @@ import SingleProductPage from "./SigleProductpage";
 import Admin from "./Admin";
 import AdminDashboard from "./AdminDashboard";
 import AdminEditProduct from "./AdminEditProduct";
-
+import { PrivateRoute } from "../Components/PrivateRoute";
 
 const MainRoutes = () => {
   return (
@@ -19,11 +19,18 @@ const MainRoutes = () => {
       <Route path="/product/mens-footware" element={<MensShoePage />} />
       <Route path="/product/women-footware" element={<WomensPage />} />
       <Route path="/product/homeandappliances" element={<HomeandAppliance />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route
+        path="/cart"
+        element={
+          <PrivateRoute>
+            <Cart />
+          </PrivateRoute>
+        }
+      />
       <Route path="/product/:id" element={<SingleProductPage />} />
-       <Route path="/admin" element={<Admin />} />
-      <Route path="/admindashboard" element={<AdminDashboard/>}/>
-      <Route path="/edit/:id" element={<AdminEditProduct/>}/> 
+      <Route path="/admin" element={<Admin />} />
+      <Route path="/admindashboard" element={<AdminDashboard />} />
+      <Route path="/edit/:id" element={<AdminEditProduct />} />
       <Route
         path="*"
         element={
