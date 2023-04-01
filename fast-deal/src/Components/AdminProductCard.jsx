@@ -44,6 +44,13 @@ const DIV = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin-bottom: 20px;
+  
+  transition: transform 1s;
+  overflow:clip;
+  cursor:pointer;
+  :hover{
+    transform: scale(0.9)
+  }
 }
 
 .s1 img {

@@ -14,8 +14,8 @@ function App() {
     <div className="App">
 
       <ChakraProvider>
-        <AdminNavbar/>
         <NavBar />
+        <AdminNavbar/>
         <MainRoutes />
         <Footer />
       </ChakraProvider>

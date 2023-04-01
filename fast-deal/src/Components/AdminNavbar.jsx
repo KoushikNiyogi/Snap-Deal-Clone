@@ -38,11 +38,15 @@ export const AdminNavbar = () => {
   
   <DIV>
       
-      <h3>Shoping App</h3>
-        <h4><Link to={"/admindashboard"}>Dashboard</Link></h4>
-        <h4><Link to={"/admin"}>Admin</Link></h4> 
+      
+    
+      <img src="https://images.freeimages.com/images/large-previews/ab7/shields-1-1244388.jpg" alt="shild_image" />
+     <Link to={"/admindashboard"}> <h4 style={{paddingLeft:"100px"}}>Dashboard</h4> </Link>
+       <Link to={"/admin"}> <h4>Add Product</h4> </Link>
+      
+        <h2 style={{paddingLeft:"100px",color:"green"}}>Welcome Admin!!!</h2>
           <div className='prodCategory'>
-              <h3>Filter By</h3>
+              <h5>Filter By</h5>
             <div>
               <input type="checkbox" value={"Mens"} onChange={handleChange} checked={category.includes("Mens")}/>
               <label>Men</label>
@@ -51,10 +55,10 @@ export const AdminNavbar = () => {
               <input type="checkbox" value={"Womens"} onChange={handleChange} checked={category.includes("Womans")}/>
               <label>Women</label>
             </div>
-            <div>
+            {/* <div>
               <input type="checkbox" value={"children"} onChange={handleChange} checked={category.includes("children")}/>
               <label>Kids</label>
-            </div>
+            </div> */}
           </div>
   </DIV>
 
@@ -72,10 +76,15 @@ const DIV = styled.div`
   align-items: center;
   gap: 20px;
   border-bottom: 1px solid gray;
+  img{
+    width:40px;
+    height:40px;
+    margin-left:20px
+  }
   .prodCategory{
     display: flex;
   align-items: center;
-  margin-left: 50%;
+  /* margin-left: 20%; */
   gap: 10px;
   }
 
@@ -83,14 +92,14 @@ const DIV = styled.div`
 nav a {
   color: #333; /* Change this to the desired link color */
   text-decoration: none;
-  margin-right: 20px;
+  /* margin-right: 1px; */
 }
 
 /* Style for the filter category section */
 .prodCategory {
   display: flex;
   flex-direction: row;
-  margin-left: 40%;
+  margin-left: 10%;
 }
 
 /* Style for the category checkboxes */
