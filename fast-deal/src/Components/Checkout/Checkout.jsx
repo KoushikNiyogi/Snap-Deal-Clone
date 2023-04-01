@@ -40,11 +40,13 @@ const Checkout = () => {
   const [email, setEmail] = useState("");
   const [textArea, setTextArea] = useState("");
   const [formData, setFormData] = useState([]);
+  const dispatch = useDispatch();
   console.log(formData);
   const toast = useToast();
     const navigate= useNavigate()
 
   const handleSubmit = () => {
+    dispatch({ type: 'CLEAR_CART' });
     if (
       fname == "" ||
       lname == "" ||
@@ -80,6 +82,7 @@ const Checkout = () => {
       toast({
         size: "500",
         position: "top-center",
+        image:'https://www.shikharclasses.in/wp-content/uploads/2020/04/PAYMENT-SUCCESS.png',
         title: "Order Placed.",
         description: "Thank you for shopping with us.",
         status: "success",
@@ -88,6 +91,7 @@ const Checkout = () => {
       });
      navigate('/')
     }
+    
   };
 
   return (

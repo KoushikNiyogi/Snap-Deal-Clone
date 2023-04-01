@@ -86,23 +86,23 @@ const SingleProductPage = () => {
   // Adding prod to cart here
   const dispatch = useDispatch();
   const addToCartHandler = (productData) => {
-    console.log(store);
-    if(store.cart.find((item)=> item.id == productData.id)){
+    if (store.cart.find((item) => item.id === productData.id)) {
       toast({
-        title: `Product is already in Cart`,
+        title: "Product is already in Cart",
         status: "error",
         isClosable: true,
       });
-    }else{
-    dispatch(postData(productData)).then((res)=>{toast({
-      title: `Product Added to Cart`,
-      status: "success",
-      isClosable: true,
-    })
-    console.log(res)
-  });
+    } else {
+      dispatch(postData(productData)).then((res) => {
+        toast({
+          title: "Product Added to Cart",
+          status: "success",
+          isClosable: true,
+        });
+      });
     }
   };
+  
 //   .then((res) => {
 //     console.log(res)
 //     dispatch(postCartProductsSuccess(res.data))
