@@ -18,7 +18,7 @@ const DIV = styled.div`
   width: 100%;
   margin: auto;
   .productlist{
-    border: 1px solid red;
+    
     
   }
 `
