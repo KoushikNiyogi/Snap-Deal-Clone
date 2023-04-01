@@ -7,12 +7,11 @@ import {
     ModalHeader,
     ModalBody,
     ModalCloseButton,
-    useDisclosure,
   } from '@chakra-ui/react'
 import { Login } from './Login';
 
-export const LoginButton = ({setrandom}) => {
-    const { isOpen, onOpen, onClose } = useDisclosure();
+export const LoginButton = ({setrandom,isOpen, onOpen, onClose }) => {
+ 
   return (
     <div>
         <button onClick={onOpen}>LOGIN</button>
