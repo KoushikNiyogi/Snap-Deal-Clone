@@ -74,7 +74,7 @@ import Gap from "../Components/Gap/Gap";
 import my_border from "../scripts/my_border";
 import { BsCashStack } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../Redux/CartReducer/action";
+import { postData } from "../Redux/CartReducer/action";
 
 const SingleProductPage = () => {
   const [loading, setLoading] = useState(true);
@@ -86,7 +86,7 @@ const SingleProductPage = () => {
   // Adding prod to cart here
   const dispatch = useDispatch();
   const addToCartHandler = (id) => {
-
+    console.log(store);
     if(store.cart.find((item)=> item.id == id)){
       toast({
         title: `Product is already in Cart`,
@@ -94,13 +94,19 @@ const SingleProductPage = () => {
         isClosable: true,
       });
     }else{
-    dispatch(addToCart(id)).then((res)=>toast({
+    dispatch(postData(productData)).then((res)=>{toast({
       title: `Product Added to Cart`,
       status: "success",
       isClosable: true,
-    }));
+    })
+    console.log(res)
+  });
     }
   };
+//   .then((res) => {
+//     console.log(res)
+//     dispatch(postCartProductsSuccess(res.data))
+// }).catch((err) => dispatch(postCartProductsFailure()))
   //------------
   useEffect(() => {
     setLoading(true);
@@ -116,6 +122,8 @@ const SingleProductPage = () => {
       });
   }, [id]);
   console.log(store.cart);
+
+  console.log(productData)
   if (loading) return <Loader gif={LOADER_URL} />;
   if (error) return <Loader gif={ERROR_URL} />;
   return productData === "undefined" ? null : (
@@ -263,7 +271,7 @@ const SingleProductPage = () => {
                   variant={"outline"}
                   colorScheme={"pink"}
                   size="md"
-                  onClick={() => addToCartHandler(id)}
+                  onClick={() => addToCartHandler(productData)}
                 >
                   ADD TO BAG
                 </Button>
