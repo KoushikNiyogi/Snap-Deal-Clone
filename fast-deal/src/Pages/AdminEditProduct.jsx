@@ -59,9 +59,10 @@ const AdminEditProduct = () => {
 console.log(products,"products")
   return (
     <DIV>
+      
+      <form onSubmit={handleEdit}>
       <h3>Edit Product: {id}</h3>
       <h2>{success && "Product Edited Successfully!!"} </h2>
-      <form onSubmit={handleEdit}>
         <input type="text" name={"image"} onChange={handleChange} value={data.image[0]}/>
         <input type="text" name={"name"} onChange={handleChange} value={data.name}/>
         <input type="number" name={"price"} onChange={handleChange} value={data.price}/>
@@ -82,36 +83,67 @@ console.log(products,"products")
 }
 export default AdminEditProduct
 const DIV = styled.div`
-width: 400px;
-margin:40px  auto;
-border: 1px solid gray;
-padding: 20px;
-    .form-1{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-    input{
-        width: 80%;
-        height: 40px;
-        font-size: large;
-        border: 1px solid gray;
-    }
-    button{
-        width: 40%;
-        height: 35px;
-        border: 1px solid black;
-    }
-    form{
-      display: flex;
-      flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-    select{
-      width: 50%;
-      height: 30px;
-      font-size: large;
-    }
+  h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  color: green;
+  margin-bottom: 10px;
+}
+    form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 30px;
+}
+
+form button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
 `

@@ -37,27 +37,26 @@ export const AdminNavbar = () => {
   return <>
   
   <DIV>
-
-        <h3>Shoping App</h3>
-          <Link to={"/admindashboard"}>Dashboard</Link>
-          
-          <Link to={"/admin"}>Admin</Link>
+      
+      <h3>Shoping App</h3>
+        <h4><Link to={"/admindashboard"}>Dashboard</Link></h4>
+        <h4><Link to={"/admin"}>Admin</Link></h4> 
           <div className='prodCategory'>
-        <h3>Filter By</h3>
-         <div>
-            <input type="checkbox" value={"male"} onChange={handleChange} checked={category.includes("male")}/>
-             <label>Men</label>
-         </div>
-         <div>
-            <input type="checkbox" value={"female"} onChange={handleChange} checked={category.includes("female")}/>
-             <label>Women</label>
-         </div>
-         <div>
-            <input type="checkbox" value={"children"} onChange={handleChange} checked={category.includes("children")}/>
-            <label>Kids</label>
-        </div>
-     </div>
-    </DIV>
+              <h3>Filter By</h3>
+            <div>
+              <input type="checkbox" value={"Mens"} onChange={handleChange} checked={category.includes("Mens")}/>
+              <label>Men</label>
+            </div>
+            <div>
+              <input type="checkbox" value={"Womens"} onChange={handleChange} checked={category.includes("Womans")}/>
+              <label>Women</label>
+            </div>
+            <div>
+              <input type="checkbox" value={"children"} onChange={handleChange} checked={category.includes("children")}/>
+              <label>Kids</label>
+            </div>
+          </div>
+  </DIV>
 
     
   </>
@@ -66,6 +65,7 @@ export const AdminNavbar = () => {
 }
 
 const DIV = styled.div`
+
   width: 100%;
   margin: auto;
   display: flex;
@@ -78,4 +78,30 @@ const DIV = styled.div`
   margin-left: 50%;
   gap: 10px;
   }
+
+/* Style for the dashboard and admin links */
+nav a {
+  color: #333; /* Change this to the desired link color */
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+/* Style for the filter category section */
+.prodCategory {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40%;
+}
+
+/* Style for the category checkboxes */
+.prodCategory input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Style for the category labels */
+.prodCategory label {
+  font-weight: bold;
+  margin-right: 10px;
+} 
+
 `;

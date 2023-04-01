@@ -8,14 +8,15 @@ export const AdminProductCard = ({image, name, price, productline, discount, id,
 
   return (
     <DIV >
-    <img src = {image[0]} alt={name}/>
-    <h3>{name}</h3>
-    <h3>Price: {price}</h3>
-    <p>Strickoff-price: {"strickoff-price"}</p>
-    <p>Brand: {productline}</p>
-    <p>Discount: {discount}%</p>
-    <p>Rating: {rating.rate} ⭐</p>
-    <div className='btn'>
+        <div className='s1'>
+            <img src = {image[0]} alt={name}/>
+            <h4>{name}</h4>
+            <h4>Price: {price}</h4>
+            <p>Strickoff-price: {"strickoff-price"}</p>
+            <p>Brand: {productline}</p>
+            <p>Discount: {discount}%</p>
+            <p>Rating: {rating.rate} ⭐</p>
+            <div className='btn'>
     <button className='editbtn'>
         <Link to={`/edit/${id}`}>Edit</Link>
     </button>
@@ -23,30 +24,61 @@ export const AdminProductCard = ({image, name, price, productline, discount, id,
          Delete
     </button>
     </div>
+        </div>
     
     </DIV>
   )
 }
 const DIV = styled.div`
-    border: 1px solid gray;
-    padding: 10px;
-    width: 300px;
-    img{
-        width: 100%;
-        height: 200px;
-    }
-    .editbtn{
-        width: 60px;
-        margin: auto;
-        text-decoration: none;
-        margin-left: 20px;
-        margin-right: 100px;
-        color: white;
-        background-color: tomato;
-    }
-    .dlbtn{
-        width: 60px;
-        color: white;
-        background-color: tomato;
-    }
+    
+    width: 280px;
+    
+    .s1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.s1 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editbtn,
+.dlbtn {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editbtn:hover,
+.dlbtn:hover {
+  background-color: #0056b3;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
 `
