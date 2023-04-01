@@ -25,11 +25,11 @@ const MainRoutes = () => {
         path="/cart"
         element={
           <PrivateRoute>
-            <Cart />
+            <AddCart />
           </PrivateRoute>
         }
       />
-      <Route path="/cart" element={<AddCart />} />
+
       <Route path="/product/:id" element={<SingleProductPage />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/admindashboard" element={<AdminDashboard />} />
