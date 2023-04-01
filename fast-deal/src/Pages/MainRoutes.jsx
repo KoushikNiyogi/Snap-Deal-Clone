@@ -12,6 +12,7 @@ import AdminDashboard from "./AdminDashboard";
 import AdminEditProduct from "./AdminEditProduct";
 import { PrivateRoute } from "../Components/PrivateRoute";
 import AddCart from "../Components/AddCart";
+import Checkout from "../Components/Checkout/Checkout";
 
 
 const MainRoutes = () => {
@@ -31,9 +32,12 @@ const MainRoutes = () => {
       />
 
       <Route path="/product/:id" element={<SingleProductPage />} />
-      <Route path="/admin" element={<Admin />} />
-      <Route path="/admindashboard" element={<AdminDashboard />} />
-      <Route path="/edit/:id" element={<AdminEditProduct />} />
+
+       <Route path="/admin" element={<Admin />} />
+       <Route path='/checkout' element={<Checkout/>}/>
+      <Route path="/admindashboard" element={<AdminDashboard/>}/>
+      <Route path="/edit/:id" element={<AdminEditProduct/>}/> 
+
       <Route
         path="*"
         element={
