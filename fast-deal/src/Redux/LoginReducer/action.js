@@ -41,7 +41,7 @@ export const login =
               return;
             }
             if (user.email === "admin@gmail.com") {
-              navigate("/admin", { replace: true });
+              navigate("/admindashboard", { replace: true });
             }
             localStorage.setItem("user", JSON.stringify(user));
             dispatch({ type: LOGIN_SUCCESS, payload: user });

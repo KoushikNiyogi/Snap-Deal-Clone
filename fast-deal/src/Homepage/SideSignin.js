@@ -6,7 +6,7 @@ import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export const SideSignin = ({ setNum }) => {
+export const SideSignin = ({ isOpen, onOpen, onClose }) => {
   const user = useSelector((store) => {
     console.log(store);
     return store.loginReducer.user;
@@ -44,7 +44,7 @@ export const SideSignin = ({ setNum }) => {
         <>
           <p>If you are a new user</p>
           <RegisterButton />
-          <LoginButton setrandom={setrandom} />
+          <LoginButton setrandom={setrandom} isOpen={isOpen} onOpen={onOpen} onClose={onClose}  />
         </>
       )}
     </div>
