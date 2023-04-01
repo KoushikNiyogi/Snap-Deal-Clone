@@ -4,11 +4,12 @@ import { getProducts, getTotalitems } from '../Redux/ProductReducer/action'
 import {
   Flex,
   Box,
-  Grid,
-  GridItem,
   Text,
   Stack,
-  Skeleton
+  Skeleton,
+  SimpleGrid,
+  Hide,
+  Button
 } from "@chakra-ui/react"
 import Filter from '../Components/ProductPageComponent/Filter'
 import ProductCard from '../Components/ProductPageComponent/ProductCard'
@@ -17,6 +18,7 @@ import Sort from '../Components/ProductPageComponent/Sort'
 import Pagination from '../Components/ProductPageComponent/Pagination'
 const fakearr = [0,0,0,0,0,0,0,0,0,0,0,0]
 const MensPage = () => {
+  const [showfilter, Togglefilter] = useState(false);
   const [page,setPage] = useState(1)
   const dispatch = useDispatch();
   const [searchparams,setSearchParams] = useSearchParams();
@@ -69,9 +71,12 @@ const MensPage = () => {
   return (
     <Box width={"100%"} backgroundColor={"#f7f7f7"} paddingTop={"50px"} paddingBottom={"50px"}>
       
-    <Flex width={"80%"} backgroundColor={"#ffffff"} margin={"auto"} direction={"row"}>
-      <Filter />
-      <Box width={"80%"}>
+    <Flex width={{base:"100%",lg :"80%"}} backgroundColor={"#ffffff"} margin={"auto"} direction={{ base: 'column', lg: "row" }}>
+    <Hide below='lg'>
+       <Filter />   
+    </Hide>
+     {showfilter&&<Filter />}
+      <Box width={{base:"100%",lg :"80%"}}>
        <Flex alignItems={"center"} padding={"10px"} justifyContent={'space-between'}>
         <Text fontSize='2xl'>
          {
@@ -82,15 +87,20 @@ const MensPage = () => {
           "Home Appliances"
          }
         </Text>
+        <Flex>
+        <Hide above='lg'>
+                <Button backgroundColor="#e40046" color ="white" mr={"10px"} onClick={() => Togglefilter(!showfilter)}>{showfilter ? "Hide filters" : "Show Filters"}</Button>
+        </Hide>
         <Sort/>
+        </Flex>
+        
        </Flex>
       
       <Box width={"100%"} borderTop={"3px solid #f7f7f7"} borderLeft={"3px solid #f7f7f7"}>
-        <Grid templateColumns={"repeat(4,1fr)"} gap={"10px"} padding={"10px"}>
+        <SimpleGrid  columns={{ base: 1, md: 2, lg: 4 }} gap={"10px"} padding={"10px"}>
           {
             isLoading == true ? fakearr.map((item)=>{
-              return <GridItem ><Stack>
-                
+              return <Stack maxW='sm'>
               <Skeleton height='250px' />
               <Skeleton height='20px' />
               <Skeleton height='20px' />
@@ -98,11 +108,11 @@ const MensPage = () => {
               <Skeleton height='20px' />
               <Skeleton height='20px' />
             </Stack>
-            </GridItem>
+           
             }) :
-            products.length != 0 && products.map((item)=><GridItem key={item.id}> <ProductCard item = {item}/></GridItem>)
+            products.length != 0 && products.map((item)=> <ProductCard  key={item.id} item = {item}/>)
           }
-        </Grid>
+        </SimpleGrid >
         </Box>
         <Flex justifyContent = {"center"}>
         <Pagination page = {page} totalCount = {Math.ceil(totalCount/12)} setPage ={setPage}/>

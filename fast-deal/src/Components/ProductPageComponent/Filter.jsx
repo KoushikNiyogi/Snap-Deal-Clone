@@ -145,7 +145,7 @@ const Filter = () => {
   }*/
   console.log(store.path);
   return (
-    <Box w={"20%"} padding={"10px"}>
+    <Box w={{base:"100%",lg :"20%"}} padding={"10px"}>
       <h1>Product Filter</h1>
       <Accordion allowMultiple>
         {

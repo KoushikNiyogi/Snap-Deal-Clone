@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 export const AdminNavbar = () => {
+
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.getAll("category");
   //const initialOrder = searchParams.get("order");
   const [category, setCategory] = useState(initialCategory || []);
-  //const [order, setOrder] = useState(initialOrder || "");
+  //const [order, setOrder] = useState(initialOrder || "")
+
 
   const handleChange = (e) => {
     let newCategory = [...category];
@@ -99,6 +101,33 @@ const DIV = styled.div`
     text-decoration: none;
     margin-right: 20px;
   }
+
+  img{
+    width:40px;
+    height:40px;
+    margin-left:20px
+  }
+  .prodCategory{
+    display: flex;
+  align-items: center;
+  /* margin-left: 20%; */
+  gap: 10px;
+  }
+
+/* Style for the dashboard and admin links */
+nav a {
+  color: #333; /* Change this to the desired link color */
+  text-decoration: none;
+  /* margin-right: 1px; */
+}
+
+/* Style for the filter category section */
+.prodCategory {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+}
+
 
   /* Style for the filter category section */
   .prodCategory {

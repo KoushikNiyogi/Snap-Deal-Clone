@@ -15,6 +15,7 @@ import AddCart from "../Components/AddCart";
 import Checkout from "../Components/Checkout/Checkout";
 
 
+
 const MainRoutes = () => {
   return (
     <Routes>
@@ -35,6 +36,7 @@ const MainRoutes = () => {
 
        <Route path="/admin" element={<Admin />} />
        <Route path='/checkout' element={<Checkout/>}/>
+
       <Route path="/admindashboard" element={<AdminDashboard/>}/>
       <Route path="/edit/:id" element={<AdminEditProduct/>}/> 
 
