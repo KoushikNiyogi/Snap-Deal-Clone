@@ -1,36 +1,64 @@
-# Snap Deal CLone
-Snap Deal clone is e-commerce platform where user can buy product on user side and on admin side admin can make crud opreation on products.
+# FastDeal (Clone of SnapDeal)
+FastDeal is an e-commerce website that specializes in clothing. Users can sign up and browse through a variety of products, add them to their cart, and proceed to checkout. Payment and shipping information can be provided at checkout, and once the payment is processed, users will be redirected to the homepage.
 
-## Tech Stack : 
-### React | React-Router-Dom | Redux | React-Redux | Chakra UI | Bootstrap | Styled Components | Axios
+# Getting Started
+To get started with the project, you will need to clone the repository to your local machine.
 
-## Features : 
-1. Home page.
-2. Login and Siginup - protected routes functionality.
-3. Category Page - Filter, Sort and Pagination functionality.
-4. Product page - add to cart functionality.
-5. Cart page.
-6. Checkout Page.
-7. Admin Dashboard - edit and delete product functionality.
-8. Add product page in Admin side.
-9. Used Redux for centralising logic and manage state.
+# Tech Stack
+## Frontend
+- HTML
+- CSS
+- JavaScript
+- React
+- React-Router-Dom
+- Redux
+- React-Redux
+- Chakra UI
+- Bootstrap
+- Styled Components
 
-## Challenges :
-1. Creating generic Category page and filter component for multiple categories.
+## Backend
+- JSON Server
 
-## Features to be implemented in future : 
-1. Search functionality.
-2. Wishlist Page and functionality.
-3. Order management on admin side.
+## Pages
+- Home Page
+- SignUp and Login
+- Products Page
+- Product Description
+- Cart Page
+- Payment and Checkout Page
 
-## Installation and Dependencies : 
- 1. cloning git repository - `git clone`. 
- 2. command for installing the project in local system - `npm run install`.
- 3. command for running the live server - `npm run start`.
- 4. Dependencies - use `npm install` and following key words after command - `axios react-router-dom redux react-redux redux-thunk react-icons`
-    - Command for installing Chakra UI - `npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`
-  
-## Project: 
-  
- 
+## Features
+- Home Page
+- Login and Signup - protected routes functionality.
+- Shopping Page - View Products by categories, filter, sort, and pagination functionality.
+- Product Description Page.
+- Cart Page - Add and delete from cart functionality.
+- Payment and Checkout Page.
+- Used Redux for centralizing logic and manage state.
 
+## Functionalities
+- Slider on Home Page.
+- Login and Registration.
+- View Products by categories.
+- Filter products.
+- Sort by Price.
+- Add to Cart.
+- Deleting from Cart.
+- Payment.
+
+## Challenges
+- One of the challenges faced during the development of this project was creating a generic Category page and filter component for multiple categories.
+
+## Features to be Implemented in Future
+- Wishlist Page and functionality.
+- Order management on admin side.
+
+## Contribution
+- Koushik Niyogi
+- Prabhat Kumar
+- Rajesh Pradhan
+- Prajit Santra
+- Aakash Chakravarty
+
+#### Deployed Link :- https://fastdeal1.vercel.app/
