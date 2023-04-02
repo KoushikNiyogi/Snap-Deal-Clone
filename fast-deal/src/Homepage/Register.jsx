@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Input, useToast } from "@chakra-ui/react";
+import { Box, Button, Heading, Input, Progress, useToast } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
 
@@ -7,7 +7,7 @@ import { SignUp } from "../Redux/SignUpReducer/action";
 
 
 export const Register = ({ onClose }) => {
-  const register = useSelector((store)=>store.signUpReducer)
+  const {isLoading} = useSelector((store)=>store.signUpReducer)
   // console.log("rgei")
   // console.log(register)
   const [firstName, setFirstName] = useState("");
@@ -35,6 +35,14 @@ export const Register = ({ onClose }) => {
 
   return (
     <Box m="auto" display={"grid"} gap="20px" borderRadius={"16px"}>
+       {isLoading && (
+          <Progress
+            isIndeterminate
+            hasStripe={true}
+            isAnimated={true}
+            size="sm"
+          />
+        )}
       <Heading textAlign={"center"}>Register Now</Heading>
       <Input
         type={"text"}
@@ -53,6 +61,7 @@ export const Register = ({ onClose }) => {
         value={number}
         onChange={(e) => setNumber(e.target.value)}
         placeholder="Enter Your Mobile Number"
+        
       />
 
       <Input
@@ -60,6 +69,7 @@ export const Register = ({ onClose }) => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter Your Email"
+        
       />
       <Input
         type={"password"}

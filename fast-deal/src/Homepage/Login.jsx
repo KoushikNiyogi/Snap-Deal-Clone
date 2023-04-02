@@ -1,6 +1,13 @@
-import { Box, Button, Heading, Input, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  Input,
+  Progress,
+  useToast,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../Redux/LoginReducer/action";
 
@@ -8,6 +15,9 @@ export const Login = ({ onClose, setrandom }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const toast = useToast();
+  const { isLoading } = useSelector((store) => {
+    return store.loginReducer
+  });
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleLogin = () => {
@@ -31,6 +41,14 @@ export const Login = ({ onClose, setrandom }) => {
   return (
     <>
       <Box m="auto" display={"grid"} gap="20px">
+        {isLoading && (
+          <Progress
+            isIndeterminate
+            hasStripe={true}
+            isAnimated={true}
+            size="sm"
+          />
+        )}
         <Heading textAlign={"center"}>Login</Heading>
         <Input
           value={email}
