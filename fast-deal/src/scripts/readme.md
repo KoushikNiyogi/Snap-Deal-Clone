@@ -1,1 +1,0 @@
-This is sample file to push this directory main file
