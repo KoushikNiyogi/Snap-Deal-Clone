@@ -2,7 +2,7 @@
 FastDeal is an e-commerce website that specializes in clothing. Users can sign up and browse through a variety of products, add them to their cart, and proceed to checkout. Payment and shipping information can be provided at checkout, and once the payment is processed, users will be redirected to the homepage.
 
 # Getting Started
-To get started with the project, you will need to clone the repository to your local machine.
+To get started with the project, you will need to clone the repository to your PC .
 
 # Tech Stack
 ## Frontend
