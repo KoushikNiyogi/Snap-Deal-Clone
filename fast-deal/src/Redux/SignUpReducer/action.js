@@ -15,7 +15,7 @@ export const SignUp =
   (dispatch) => {
     console.log(data);
     //POST
-    dispatch({ type: SignUp_REQUEST });
+    
 
     if (
       data.firstName === "" ||
@@ -32,6 +32,7 @@ export const SignUp =
         isClosable: true,
       });
     } else {
+      dispatch({ type: SignUp_REQUEST });
       axios
         .post("https://calm-blue-cobra-wig.cyclic.app/users", data)
         .then((res) => {
