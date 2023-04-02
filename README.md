@@ -61,4 +61,7 @@ To get started with the project, you will need to clone the repository to your P
 - Prajit Santra
 - Aakash Chakravarty
 
-#### Deployed Link :- https://fastdeal1.vercel.app/
+## Deployed Link :- https://fastdeal1.vercel.app/
+## screenshot 
+-
+
