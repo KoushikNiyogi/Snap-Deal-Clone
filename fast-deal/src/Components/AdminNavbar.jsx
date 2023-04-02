@@ -7,7 +7,7 @@ import { useSearchParams } from "react-router-dom";
 export const AdminNavbar = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const initialCategory = searchParams.getAll("category");
+  const initialCategory = searchParams.getAll("type");
   //const initialOrder = searchParams.get("order");
   const [category, setCategory] = useState(initialCategory || []);
   //const [order, setOrder] = useState(initialOrder || "")
@@ -27,7 +27,7 @@ export const AdminNavbar = () => {
 
   useEffect(() => {
     let params = {
-      category,
+      type : category
     };
 
     setSearchParams(params);
@@ -47,29 +47,38 @@ export const AdminNavbar = () => {
           <div>
             <input
               type="checkbox"
-              value={"Mens"}
+              value={"menshoes"}
               onChange={handleChange}
-              checked={category.includes("Mens")}
+              checked={category.includes("menshoes")}
             />
-            <label>Men</label>
+            <label>Men Footware</label>
           </div>
           <div>
             <input
               type="checkbox"
-              value={"Womens"}
+              value={"womenshoes"}
               onChange={handleChange}
-              checked={category.includes("Womans")}
+              checked={category.includes("womenshoes")}
             />
-            <label>Women</label>
+            <label>Women Footware</label>
           </div>
           <div>
             <input
               type="checkbox"
-              value={"children"}
+              value={"menclothing"}
               onChange={handleChange}
-              checked={category.includes("children")}
+              checked={category.includes("menclothing")}
             />
-            <label>Kids</label>
+            <label>Mens Clothing</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              value={"womenclothing"}
+              onChange={handleChange}
+              checked={category.includes("womenclothing")}
+            />
+            <label>Womens Clothing</label>
           </div>
         </div>
       </DIV>
