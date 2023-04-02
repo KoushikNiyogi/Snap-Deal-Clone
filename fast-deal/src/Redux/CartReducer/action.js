@@ -43,6 +43,10 @@ export const postData = (newData) => (dispatch) => {
     console.log(newData)
     dispatch(postCartProductsRequest())
     return axios.post(`https://calm-blue-cobra-wig.cyclic.app/cart`, newData)
+    .then((res) => {
+            console.log(res)
+            dispatch(postCartProductsSuccess(res.data))
+        }).catch((err) => dispatch(postCartProductsFailure()))
 }
 
 
