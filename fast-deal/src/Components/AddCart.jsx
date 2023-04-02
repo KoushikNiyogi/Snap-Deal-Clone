@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Box,
   Button,
@@ -8,11 +8,11 @@ import {
   Heading,
   HStack,
   Text,
-} from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
-import Loader from './Loader/Loader';
-import { getCartItem } from '../Redux/CartReducer/action';
-import CartItem from './CartItem';
+} from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import Loader from "./Loader/Loader";
+import { getCartItem } from "../Redux/CartReducer/action";
+import CartItem from "./CartItem";
 
 const AddCart = () => {
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ const AddCart = () => {
   );
 
   const handleClearCart = () => {
-    dispatch({ type: 'CLEAR_CART' });
+    dispatch({ type: "CLEAR_CART" });
   };
 
   return (
@@ -48,7 +48,7 @@ const AddCart = () => {
                     key={item.id}
                     id={item.id}
                     name={item.name}
-                    image={item.image}
+                    image={item.image[0]}
                     price={item.price}
                     category={item.rating.rate}
                   />
@@ -66,7 +66,7 @@ const AddCart = () => {
                   </Box>
                 </Flex>
                 <HStack mt={8}>
-                  <Link to={'/checkout'}>
+                  <Link to={"/checkout"}>
                     <Button variant="solid" colorScheme="blue">
                       Proceed to Checkout
                     </Button>
