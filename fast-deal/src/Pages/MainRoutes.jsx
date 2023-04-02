@@ -13,7 +13,7 @@ import AdminEditProduct from "./AdminEditProduct";
 import { PrivateRoute } from "../Components/PrivateRoute";
 import AddCart from "../Components/AddCart";
 import Checkout from "../Components/Checkout/Checkout";
-
+import {Button} from "@chakra-ui/react"
 
 
 const MainRoutes = () => {
