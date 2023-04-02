@@ -63,5 +63,5 @@ To get started with the project, you will need to clone the repository to your P
 
 ## Deployed Link :- https://fastdeal1.vercel.app/
 ## screenshot 
--
+[Image](/fast-deal/src/assets/homepageSS.png)
 
