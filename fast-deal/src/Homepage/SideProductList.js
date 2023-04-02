@@ -567,8 +567,9 @@ const DIV = styled.div`
   }
   .leftside li img {
     width: 24%;
-    padding: 1rem;
-    padding-left: 12px;
+    padding: 0.1rem;
+    padding-left: 0.5rem;
+    display: block;
   }
   .leftside li span {
     padding: 9px 0 0 8px;
