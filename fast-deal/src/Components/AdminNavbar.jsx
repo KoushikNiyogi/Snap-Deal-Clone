@@ -35,15 +35,18 @@ export const AdminNavbar = () => {
   return (
     <>
       <DIV>
-        <h3>Shoping App</h3>
+      <img src="https://images.freeimages.com/images/large-previews/ab7/shields-1-1244388.jpg" alt="shild_image" />
+     <Link to={"/admindashboard"}> <h4 style={{paddingLeft:"100px"}}>Dashboard</h4> </Link>
+       <Link to={"/admin"}> <h4>Add Product</h4> </Link>
+        {/* <h3>Shoping App</h3>
         <h4>
           <Link to={"/admindashboard"}>Dashboard</Link>
         </h4>
         <h4>
           <Link to={"/admin"}>Admin</Link>
-        </h4>
+        </h4> */}
         <div className="prodCategory">
-          <h3>Filter By</h3>
+          <h4>Filter By</h4>
           <div>
             <input
               type="checkbox"
@@ -91,16 +94,14 @@ const DIV = styled.div`
   margin: auto;
   display: flex;
   justify-content: space-between;
+  background-color:#62aae5;
   align-items: center;
   gap: 20px;
   border-bottom: 1px solid gray;
-  * {
-    font-size: 13px;
-  }
   .prodCategory {
     display: flex;
     align-items: center;
-    margin-left: 50%;
+    /* margin-left: 10%; */
     gap: 10px;
   }
 
@@ -123,28 +124,12 @@ const DIV = styled.div`
   gap: 10px;
   }
 
-/* Style for the dashboard and admin links */
-nav a {
-  color: #333; /* Change this to the desired link color */
-  text-decoration: none;
-  /* margin-right: 1px; */
-}
-
 /* Style for the filter category section */
 .prodCategory {
   display: flex;
   flex-direction: row;
-  margin-left: 10%;
+  margin-left: 25%;
 }
-
-
-  /* Style for the filter category section */
-  .prodCategory {
-    display: flex;
-    flex-direction: row;
-    margin-left: 40%;
-  }
-
   /* Style for the category checkboxes */
   .prodCategory input[type="checkbox"] {
     margin-right: 5px;

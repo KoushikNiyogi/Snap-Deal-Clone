@@ -35,6 +35,7 @@ const DIV = styled.div`
     
     .s1 {
   display: flex;
+  
   flex-direction: column;
   align-items: center;
   justify-content: center;
