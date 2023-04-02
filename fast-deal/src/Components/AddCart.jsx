@@ -36,7 +36,7 @@ const AddCart = () => {
       <Heading as="h1" size="2xl" mb={4}>
         Shopping Cart
       </Heading>
-      <Box borderWidth="1px" borderRadius="lg" overflow="hidden">
+      <Box borderWidth="1px" borderRadius="lg" overflow="hidden" >
         {isLoading ? (
           <Loader />
         ) : (
