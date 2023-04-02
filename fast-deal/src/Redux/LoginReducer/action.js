@@ -6,7 +6,6 @@ export const login =
   (userData, onClose, setrandom, toast, setEmail, setPassword, navigate) =>
   (dispatch) => {
     // console.log(userData);
-    dispatch({ type: LOGIN_REQUEST });
 
     if (userData.email === "" || userData.password === "") {
       toast({
@@ -17,6 +16,7 @@ export const login =
         isClosable: true,
       });
     } else {
+      dispatch({ type: LOGIN_REQUEST });
       return axios
         .get("https://calm-blue-cobra-wig.cyclic.app/users")
         .then((response) => {

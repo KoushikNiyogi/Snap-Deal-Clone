@@ -49,18 +49,21 @@ export const Register = ({ onClose }) => {
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
         placeholder="Enter Your First Name"
+        required
       />
       <Input
         type={"text"}
         value={lasttName}
         onChange={(e) => setLastName(e.target.value)}
         placeholder="Enter Your Last Name"
+        required
       />
       <Input
         type="number"
         value={number}
         onChange={(e) => setNumber(e.target.value)}
         placeholder="Enter Your Mobile Number"
+        required
         
       />
 
@@ -69,6 +72,7 @@ export const Register = ({ onClose }) => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter Your Email"
+        required
         
       />
       <Input
@@ -76,6 +80,7 @@ export const Register = ({ onClose }) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Enter Your Password"
+        required
       />
 
       <Button onClick={handleRegister}colorScheme={"#e40046;"} >Register</Button>
