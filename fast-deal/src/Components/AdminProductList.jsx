@@ -23,8 +23,6 @@ export const AdminProductList = () => {
     const handleDelete = (id) => {
         dispatch(deleteProduct(id))
       }
-
-
     useEffect(() => {
         dispatch(getProducts(obj))
     }, [location.search]);
@@ -37,7 +35,6 @@ export const AdminProductList = () => {
     })}
     </DIV>
     )
-  
 }
 const DIV = styled.div`
 width: 80%;
