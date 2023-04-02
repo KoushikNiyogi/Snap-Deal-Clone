@@ -43,7 +43,7 @@ const MainRoutes = () => {
       <Route
         path="*"
         element={
-          <div>
+          <div style = {{width: "50%", margin : "auto" }}>
             <h1>Error 404</h1>
             <h2>Page Not Foud</h2>
           </div>
