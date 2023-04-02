@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
-import {AdminNavbar} from "../Components/AdminNavbar"
-
 import { editProduct, getProducts } from '../Redux/AdminProductReducer/action';
+import { AdminNavbar } from '../Components/AdminNavbar';
 const initialState = {
   name: "",
   image:[],
@@ -47,7 +46,12 @@ const AdminEditProduct = () => {
     dispatch(editProduct(data, id))
     .then(() => {
       setSuccess(true);
+      alert("Product edited successfully");
     })
+    .catch((error) => {
+      console.log(error);
+      alert('Failed to edit product.');
+    });
   }
 
   useEffect(() => {
@@ -85,7 +89,8 @@ console.log(products,"products")
 }
 export default AdminEditProduct
 const DIV = styled.div`
-  h3 {
+  /* Base styles */
+h3 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -96,13 +101,14 @@ h2 {
   color: green;
   margin-bottom: 10px;
 }
-    form {
+
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -146,6 +152,70 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+/* Media queries */
+@media only screen and (max-width: 767px) {
+  h3 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  form {
+    padding: 10px;
+  }
+
+  form button[type="submit"] {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  h3 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  form {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  h3 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  form {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  h3 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  form {
+    max-width: 40%;
+  }
+}
+
+
 
 
 `

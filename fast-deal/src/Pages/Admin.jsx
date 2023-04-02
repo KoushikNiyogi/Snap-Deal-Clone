@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { addData } from '../Redux/AdminProductReducer/action';
-import {AdminNavbar} from "../Components/AdminNavbar"
+import { AdminNavbar } from '../Components/AdminNavbar';
+
+
 const initialState = {
   id:0,
   type:"",
@@ -49,12 +51,17 @@ const initialState = {
     e.preventDefault();
     dispatch(addData(product));
     setProduct(initialState)
+    alert('Product added successfully!');
   }
   return (
     <DIV>
+      
       <AdminNavbar/>
-      <h2>Add Product</h2>
+      
+      <div>
+
       <form onSubmit={handleSubmit} >
+      <h2>Add Product</h2>
       <input 
             type="number" value={product.id} onChange={(e)=> { handleChange(e)}} name="id" placeholder='Id'/>
         <input 
@@ -77,7 +84,7 @@ const initialState = {
           <option value="">Select Brand</option>
           <option value="Mens">Mens</option>
           <option value="Womens">Womens</option>
-          {/* <option value="children">Kids</option> */}
+          
         </select>
         <input 
             type="text" value={product.productline} onChange={(e)=> { handleChange(e)}} name="productline" placeholder='productline'/>
@@ -87,13 +94,15 @@ const initialState = {
             type="text" value={product.description} onChange={(e)=> { handleChange(e)}} name="description" placeholder='description'/> 
         <input 
             type="number" value={product.quantity} onChange={(e)=> { handleChange(e)}} name="quantity" placeholder='quantity' />
-        <input 
+        {/* <input 
             type="number" value={product.rating.rate} onChange={(e)=> { handleChange(e)}} name="rating.rate" placeholder='rating'/>           
         <input 
-            type="number" value={product.rating.count} onChange={(e)=> { handleChange(e)}} name="rating.count" placeholder='count'/>    
+            type="number" value={product.rating.count} onChange={(e)=> { handleChange(e)}} name="rating.count" placeholder='count'/>     */}
 
         <button type='submit'>Submit</button>
       </form>
+      </div>
+      
     </DIV>
     
     
@@ -101,7 +110,7 @@ const initialState = {
 }
 export default Admin;
 const DIV = styled.div`
-width: 400px;
+/* width: 100%;
 margin:40px  auto;
 border: 1px solid gray;
 padding: 20px;
@@ -135,6 +144,7 @@ input{
         }
     }
     form{
+      width:400px
       display: flex;
       flex-direction: column;
         gap: 15px;
@@ -144,5 +154,129 @@ input{
       width: 50%;
       height: 30px;
       font-size: large;
-    }
+    } */
+    h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #E53E3E;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 30px;
+}
+
+form button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Media queries */
+@media only screen and (max-width: 767px) {
+  h3 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  form {
+    padding: 10px;
+  }
+
+  form button[type="submit"] {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  h3 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  form {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  h3 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  form {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  h3 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  form {
+    max-width: 40%;
+  }
+}
 `

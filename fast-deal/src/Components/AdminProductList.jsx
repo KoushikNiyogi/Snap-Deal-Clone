@@ -22,7 +22,10 @@ export const AdminProductList = () => {
     }
     const handleDelete = (id) => {
         dispatch(deleteProduct(id))
+        alert('Product delete successfully!');
       }
+
+
     useEffect(() => {
         dispatch(getProducts(obj))
     }, [location.search]);
@@ -35,12 +38,42 @@ export const AdminProductList = () => {
     })}
     </DIV>
     )
+  
 }
 const DIV = styled.div`
-width: 80%;
+/* width: 80%;
 margin-left: 47px;
 margin-top:20px;
     display: grid;
     grid-template-columns: auto auto auto auto;
+    gap: 15px; */
+    /* For screens smaller than 480px */
+/* For screens smaller than 600px */
+@media screen and (max-width: 400px) {
+  
+    display: block;
+    margin-left: 0;
+    width: 100%;
+    margin-top: 10px;
+  
+}
+@media (min-width: 401px) and (max-width: 601px){
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     gap: 15px;
+    margin-left: 47px;
+    margin-top: 20px;
+}
+/* For screens larger than 600px */
+@media screen and (min-width: 601px) {
+  
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 15px;
+    margin-left: 47px;
+    margin-top: 20px;
+  
+}
+
+
 `
