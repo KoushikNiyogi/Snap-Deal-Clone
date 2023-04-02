@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
+import {AdminNavbar} from "../Components/AdminNavbar"
+
 import { editProduct, getProducts } from '../Redux/AdminProductReducer/action';
 const initialState = {
   name: "",
@@ -59,7 +61,7 @@ const AdminEditProduct = () => {
 console.log(products,"products")
   return (
     <DIV>
-      
+      <AdminNavbar/>
       <form onSubmit={handleEdit}>
       <h3>Edit Product: {id}</h3>
       <h2>{success && "Product Edited Successfully!!"} </h2>

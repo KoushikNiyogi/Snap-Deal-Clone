@@ -67,7 +67,6 @@ const MensPage = () => {
     dispatch(getTotalitems(store.path));
     dispatch(getProducts(store.path,getParamObj()))
   },[location.key]);
-  console.log(page);
   return (
     <Box width={"100%"} backgroundColor={"#f7f7f7"} paddingTop={"50px"} paddingBottom={"50px"}>
       

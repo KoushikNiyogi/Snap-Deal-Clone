@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { addData } from '../Redux/AdminProductReducer/action';
-
+import {AdminNavbar} from "../Components/AdminNavbar"
 const initialState = {
   id:0,
   type:"",
@@ -52,6 +52,7 @@ const initialState = {
   }
   return (
     <DIV>
+      <AdminNavbar/>
       <h2>Add Product</h2>
       <form onSubmit={handleSubmit} >
       <input 

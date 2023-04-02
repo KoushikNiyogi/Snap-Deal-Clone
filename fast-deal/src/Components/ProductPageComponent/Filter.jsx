@@ -136,14 +136,12 @@ const Filter = () => {
     searchparams.get("_order")!=undefined && (params["_order"] = searchparams.get("_order"))
     searchparams.get("_page")!=undefined&&(params["_page"] = searchparams.get("_page"))
     searchparams.get("_page")!=undefined&&(params["_limit"] = searchparams.get("_limit"))
-    console.log(params);
     setSearchParams(params);
   }, [filterState])
   /*{
     rating : `${searchparams.get("rating.rate_gte")}-${searchparams.get("rating.rate_lte")}`
     color : searchparams.getAll("color")
   }*/
-  console.log(store.path);
   return (
     <Box w={{base:"100%",lg :"20%"}} padding={"10px"}>
       <h1>Product Filter</h1>

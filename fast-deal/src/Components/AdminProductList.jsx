@@ -14,7 +14,7 @@ export const AdminProductList = () => {
 
     let obj = {
         params: {
-            brand: searchParams.getAll("category"),
+            type: searchParams.getAll("type"),
             // type: searchParams.getAll("category"),
             _sort: searchParams.get("order") && "price",
             _order: searchParams.get("order"),

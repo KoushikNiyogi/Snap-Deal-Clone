@@ -15,6 +15,7 @@ export const addData = (data) => async(dispatch) => {
 }
 
 export const getProducts = (paramObj) => async(dispatch) => {
+    console.log(paramObj)
     dispatch({type: PRODUCT_REQUEST})
 
     await axios.get("https://calm-blue-cobra-wig.cyclic.app/products", paramObj)

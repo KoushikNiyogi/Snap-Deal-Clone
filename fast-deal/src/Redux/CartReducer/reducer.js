@@ -8,7 +8,6 @@ const initialState = {
 }
 
 export const reducer = (state = initialState, { type, payload }) => {
-  console.log(payload)
   switch (type) {
     case GET_CART_PRODUCTS_REQUEST:
       return { ...state, isLoading: true }

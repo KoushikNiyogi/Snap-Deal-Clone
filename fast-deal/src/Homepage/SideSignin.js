@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 
 export const SideSignin = ({ isOpen, onOpen, onClose }) => {
   const user = useSelector((store) => {
-    console.log(store);
     return store.loginReducer.user;
   });
   const [random, setrandom] = useState(0);
